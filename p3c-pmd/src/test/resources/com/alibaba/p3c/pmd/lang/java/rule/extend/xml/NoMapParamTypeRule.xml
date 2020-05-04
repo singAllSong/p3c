@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<test-data xmlns="http://pmd.sourceforge.net/rule-tests"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://pmd.sourceforge.net/rule-tests https://pmd.sourceforge.io/rule-tests_1_0_0.xsd">
+    <code-fragment id="invoke-method-with-map">
+        <![CDATA[
+	public class Example {
+	    public void fn(Map<Object> map, String a) {
+	    }
+	}
+		]]>
+    </code-fragment>
+    <test-code>
+        <description>invoke method with map</description>
+        <expected-problems>1</expected-problems>
+        <expected-linenumbers>2</expected-linenumbers>
+        <code-ref id="invoke-method-with-map"/>
+    </test-code>
+    
+    
+    <code-fragment id="invoke-method-with-no-map">
+        <![CDATA[
+ public class Example {
+	    public void fn(User user) {
+	    }
+	}
+  ]]>
+    </code-fragment>
+    <test-code>
+        <description>invoke method with no map</description>
+        <expected-problems>0</expected-problems>
+        <code-ref id="invoke-method-with-no-map"/>
+    </test-code>
+</test-data>

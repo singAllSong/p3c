@@ -12,6 +12,7 @@
     <rule ref="rulesets/java/ali-oop.xml"/>
     <rule ref="rulesets/java/ali-orm.xml"/>
     <rule ref="rulesets/java/ali-exception.xml"/>
+    <rule ref="rulesets/java/ali-extend.xml"/>
     <rule ref="rulesets/java/ali-set.xml"/>
     <rule ref="rulesets/java/ali-ruleOnEclipse.xml"/>
 </ruleset>

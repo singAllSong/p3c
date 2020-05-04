@@ -559,5 +559,38 @@ Positive example:
     <entry key="java.other.AvoidDoubleOrFloatEqualCompareRule.rule.msg">
         <![CDATA[To judge the equivalence of floating-point numbers, == cannot be used for primitive types, while equals cannot be used for wrapper classes.]]>
     </entry>
+    
+    <!-- 卡中心扩展 -->
+     <entry key="java.extend.MethodParamsNumRule.rule.msg">
+        <![CDATA[devcenter extend:Method parameters cannot be greater than or equal to five, if that ,Consider receiving with object]]>
+    </entry>
+    <entry key="java.naming.MethodParamsNumRule.violation.msg">
+        <![CDATA[[%s]method parameters cannot be greater than or equal to five]]>
+    </entry>
+    
+    <entry key="java.extend.MethodParamsNumRule.rule.desc">
+        <![CDATA[
+Method parameter cannot be greater than or equal to five, if that ,Consider receiving with object
+example:
+step1.Define an object:
+
+@Data
+public class User{
+    private int id;
+    private String userName;
+    private int age;
+    private String name;
+    private String addr;
+}
+
+2.invoke method pass in an object
+
+public class Example {
+    public void fn(User user) {
+        dosomething();
+    }
+}
+        ]]>
+    </entry>
 
 </properties>

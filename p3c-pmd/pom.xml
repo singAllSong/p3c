@@ -9,7 +9,7 @@
   </parent>
   <groupId>com.alibaba.p3c</groupId>
   <artifactId>p3c-pmd</artifactId>
-  <version>2.0.1</version>
+  <version>2.0.1-kzx</version>
   <packaging>jar</packaging>
   <name>p3c-pmd</name>
   <properties>
@@ -121,6 +121,7 @@
             <ruleset>rulesets/java/ali-concurrent.xml</ruleset>
             <ruleset>rulesets/java/ali-constant.xml</ruleset>
             <ruleset>rulesets/java/ali-exception.xml</ruleset>
+            <!-- <ruleset>rulesets/java/ali-extend.xml</ruleset> -->
             <ruleset>rulesets/java/ali-flowcontrol.xml</ruleset>
             <ruleset>rulesets/java/ali-naming.xml</ruleset>
             <ruleset>rulesets/java/ali-oop.xml</ruleset>

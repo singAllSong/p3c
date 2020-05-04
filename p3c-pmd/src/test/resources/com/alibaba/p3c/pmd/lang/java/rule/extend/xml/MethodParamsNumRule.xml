@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<test-data xmlns="http://pmd.sourceforge.net/rule-tests"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://pmd.sourceforge.net/rule-tests https://pmd.sourceforge.io/rule-tests_1_0_0.xsd">
+    <code-fragment id="method-parameters-have-five">
+        <![CDATA[
+	public class Example {
+	    public void fn(String a, String b, String c, String d, String e) {
+	    	
+	    }
+	}
+		]]>
+    </code-fragment>
+    <test-code>
+        <description>method parameters have five</description>
+        <expected-problems>1</expected-problems>
+        <expected-linenumbers>2</expected-linenumbers>
+        <code-ref id="method-parameters-have-five"/>
+    </test-code>
+    
+    
+    <code-fragment id="method-parameters-have-three">
+        <![CDATA[
+ public class Example {
+     public void fn(String a, String b, String c) {
+      
+     }
+ }
+  ]]>
+    </code-fragment>
+    <test-code>
+        <description>method parameters have five</description>
+        <expected-problems>0</expected-problems>
+        <code-ref id="method-parameters-have-three"/>
+    </test-code>
+</test-data>

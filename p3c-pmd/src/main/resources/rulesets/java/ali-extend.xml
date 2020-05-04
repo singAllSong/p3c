@@ -1,0 +1,83 @@
+<?xml version="1.0"?>
+
+<ruleset name="KzxJavaExtends" xmlns="http://pmd.sourceforge.net/ruleset/2.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://pmd.sourceforge.net/ruleset/2.0.0 http://pmd.sourceforge.net/ruleset_2_0_0.xsd">
+    <description>KzxJavaExtends</description>
+
+    <!-- 参数不能超过4个 -->
+    <rule name="MethodParamsNumRule"
+        language="java"
+        message="java.extend.MethodParamsNumRule.rule.msg"
+        class="com.alibaba.p3c.pmd.lang.java.rule.extend.MethodParamsNumRule">
+        <description>java.extend.MethodParamsNumRule.rule.desc</description>
+        <priority>2</priority>
+        <example>
+        <![CDATA[
+Negative example:  
+   public void fn(int a, int b, int c, int d, int e) {
+       dosomething();
+   }
+        ]]>
+        </example>
+        <example>
+        <![CDATA[
+Positive example： 
+   public void fn(Object obj) {
+       dosomething();
+   }
+         ]]>
+        </example>
+    </rule>
+    
+    <!-- 禁用map传参 -->
+     <rule name="NoMapParamTypeRule"
+        language="java"
+        message="java.naming.NoMapParamTypeRule.violation.msg"
+        class="com.alibaba.p3c.pmd.lang.java.rule.extend.NoMapParamTypeRule">
+        <description>java.extend.NoMapParamTypeRule.rule.desc</description>
+        <priority>1</priority>
+        <example>
+        <![CDATA[
+Negative example:  
+   public void fn(Map<Object> map) {
+   }
+        ]]>
+        </example>
+        <example>
+        <![CDATA[
+Positive example： 
+   public void fn(User user) {
+   }
+         ]]>
+        </example>
+    </rule>
+    
+    <!-- 日志级别规约 -->
+     <rule name="LogLevelRule"
+        language="java"
+        message="java.extend.LogLevelRule.rule.msg"
+        class="com.alibaba.p3c.pmd.lang.java.rule.extend.LogLevelRule">
+        <description>java.extend.LogLevelRule.rule.desc</description>
+        <priority>3</priority>
+        <example>
+        <![CDATA[
+Negative example:  
+   public void fn() {
+        log.error("error level");
+   }
+        ]]>
+        </example>
+        <example>
+        <![CDATA[
+Positive example： 
+   public void fn() {
+        log.info("info level");
+   }
+         ]]>
+        </example>
+    </rule>
+    
+    <!-- RequestMapping指定对应的方法 -->
+
+</ruleset>

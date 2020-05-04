@@ -554,5 +554,57 @@
     <entry key="java.other.AvoidDoubleOrFloatEqualCompareRule.rule.msg">
         <![CDATA[浮点数之间的等值判断，基本数据类型不能用==来比较，包装数据类型不能用equals来判断。]]>
     </entry>
+    
+    <!-- 卡中心扩展 -->
+    <entry key="java.extend.MethodParamsNumRule.rule.msg">
+        <![CDATA[开发中心扩展：方法参数个数不能超过4个，如果超过4个，请考虑用对象来接收。]]>
+    </entry>
+    <entry key="java.naming.MethodParamsNumRule.violation.msg">
+        <![CDATA[【%s】方法参数个数不能超过4个。]]>
+    </entry>
+    <entry key="java.extend.MethodParamsNumRule.rule.desc">
+        <![CDATA[
+当方法的参数个数大于4个时,为了方便后期代码维护,请将参数封装至一个对象里
+例如:
+1.定义对象
+@Data
+public class User{
+    private int id;
+    private String userName;
+    private int age;
+    private String name;
+    private String addr;
+}
 
+2.传入此对象
+public class Example {
+    public void fn(User user) {
+        dosomething();
+    }
+}
+        ]]>
+    </entry>
+    
+    <!-- 传参禁用Map -->
+    <entry key="java.extend.NoMapParamTypeRule.rule.msg">
+        <![CDATA[开发中心扩展：传参禁用Map，请考虑修改用对象来接收传递]]>
+    </entry>
+    <entry key="java.naming.NoMapParamTypeRule.violation.msg">
+        <![CDATA[【%s】传参禁用Map。]]>
+    </entry>
+    
+    <!-- 日志级别 -->
+    <entry key="java.extend.LogLevelRule.rule.msg">
+        <![CDATA[开发中心扩展：非catch分支请检查日志打印级别]]>
+    </entry>
+    
+    <!-- 禁用控制台输出 -->
+    <entry key="java.extend.ConsolePrint.rule.msg">
+        <![CDATA[开发中心扩展：提交git的代码禁用System.out.print]]>
+    </entry>
+    
+    <!-- 禁用e.getMessage -->
+    <entry key="java.extend.edogetMessage.rule.msg">
+        <![CDATA[开发中心扩展：提交git的代码禁用e.getMessage]]>
+    </entry>
 </properties>
