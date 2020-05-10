@@ -54,17 +54,22 @@ Positive example：
     </rule>
     
     <!-- 日志级别规约 -->
-     <rule name="LogLevelRule"
+     <rule name="AvoidTryErrorLogLevelRule"
         language="java"
         message="java.extend.LogLevelRule.rule.msg"
-        class="com.alibaba.p3c.pmd.lang.java.rule.extend.LogLevelRule">
+        class="com.alibaba.p3c.pmd.lang.java.rule.extend.AvoidTryErrorLogLevelRule">
         <description>java.extend.LogLevelRule.rule.desc</description>
         <priority>3</priority>
         <example>
         <![CDATA[
 Negative example:  
    public void fn() {
-        log.error("error level");
+            log.error("error level");
+        try{
+            log.error("error level");
+        }catch (Exception e){
+            log.info("info info")
+        }
    }
         ]]>
         </example>
@@ -72,12 +77,151 @@ Negative example:
         <![CDATA[
 Positive example： 
    public void fn() {
-        log.info("info level");
+            log.info("info level");
+        try{
+            log.info("info level");
+        }catch (Exception e){
+            log.error("error info")
+        }
+   }
+         ]]>
+        </example>
+    </rule>
+    
+    <rule name="AvoidCatchInfoLogLevelRule"
+        language="java"
+        message="java.extend.LogLevelRule.rule.msg"
+        class="com.alibaba.p3c.pmd.lang.java.rule.extend.AvoidCatchInfoLogLevelRule">
+        <description>java.extend.LogLevelRule.rule.desc</description>
+        <priority>3</priority>
+        <example>
+        <![CDATA[
+Negative example:  
+   public void fn() {
+            log.error("error level");
+        try{
+            log.error("error level");
+        }catch (Exception e){
+            log.info("info info")
+        }
+   }
+        ]]>
+        </example>
+        <example>
+        <![CDATA[
+Positive example： 
+   public void fn() {
+            log.info("info level");
+        try{
+            log.info("info level");
+        }catch (Exception e){
+            log.error("error info")
+        }
+   }
+         ]]>
+        </example>
+    </rule>
+    
+    <rule name="AvoidCommonErrorLogLevelRule"
+        language="java"
+        message="java.extend.LogLevelRule.rule.msg"
+        class="com.alibaba.p3c.pmd.lang.java.rule.extend.AvoidCommonErrorLogLevelRule">
+        <description>java.extend.LogLevelRule.rule.desc</description>
+        <priority>3</priority>
+        <example>
+        <![CDATA[
+Negative example:  
+   public void fn() {
+	   log.error("error level");
+   }
+        ]]>
+        </example>
+        <example>
+        <![CDATA[
+Positive example： 
+    public void fn() {
+	   log.info("error level");
+   }
+         ]]>
+        </example>
+    </rule>
+    
+    <rule name="AvoidSystemdoOutRule"
+        language="java"
+        message="java.extend.ConsolePrint.rule.msg"
+        class="com.alibaba.p3c.pmd.lang.java.rule.extend.AvoidSystemdoOutRule">
+        <description>java.extend.ConsolePrint.rule.msg</description>
+        <priority>1</priority>
+        <example>
+        <![CDATA[
+Negative example:  
+   public void fn() {
+       log.error("error level");
+   }
+        ]]>
+        </example>
+        <example>
+        <![CDATA[
+Positive example： 
+    public void fn() {
+       log.info("error level");
+   }
+         ]]>
+        </example>
+    </rule>
+    
+    <rule name="AvoidEdoGetMessageRule"
+        language="java"
+        message="java.extend.edogetMessage.rule.msg"
+        class="com.alibaba.p3c.pmd.lang.java.rule.extend.AvoidEdoGetMessageRule">
+        <description>java.extend.edogetMessage.rule.msg</description>
+        <priority>1</priority>
+        <example>
+        <![CDATA[
+Negative example:  
+   public void fn() {
+       try {
+            dosomething();
+        } catch (Exception e) {
+            log.error("error", e.getMessage());
+        }
+   }
+        ]]>
+        </example>
+        <example>
+        <![CDATA[
+Positive example： 
+    public void fn() {
+       try {
+            dosomething();
+        } catch (Exception e) {
+            log.error("error", e);
+        }
    }
          ]]>
         </example>
     </rule>
     
     <!-- RequestMapping指定对应的方法 -->
+    <rule name="RequestMappingRule"
+        language="java"
+        message="java.extend.RequestMappingRule.rule.msg"
+        class="com.alibaba.p3c.pmd.lang.java.rule.extend.RequestMappingRule">
+        <description>java.extend.RequestMappingRule.rule.msg</description>
+        <priority>1</priority>
+        <example>
+        <![CDATA[
+Negative example:  
+    @RequestMapping("/kzx")
+    @RequestMapping(value="/haha")
+        ]]>
+        </example>
+        <example>
+        <![CDATA[
+Positive example： 
+    @RequestMapping(value="/kzx",method = {RequestMethod.GET})
+         ]]>
+        </example>
+    </rule>
 
 </ruleset>

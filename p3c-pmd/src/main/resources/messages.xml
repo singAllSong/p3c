@@ -595,7 +595,7 @@ public class Example {
     
     <!-- 日志级别 -->
     <entry key="java.extend.LogLevelRule.rule.msg">
-        <![CDATA[开发中心扩展：非catch分支请检查日志打印级别]]>
+        <![CDATA[开发中心扩展：请检查日志打印级别,建议非catch分支为info级别,catch分支为error级别]]>
     </entry>
     
     <!-- 禁用控制台输出 -->
@@ -607,4 +607,10 @@ public class Example {
     <entry key="java.extend.edogetMessage.rule.msg">
         <![CDATA[开发中心扩展：提交git的代码禁用e.getMessage]]>
     </entry>
+    
+    <!-- 指定requestMapping的参数 -->
+    <entry key="java.extend.RequestMappingRule.rule.msg">
+        <![CDATA[开发中心扩展：使用@RequestMapping注解时,需指定method参数,避免无用的方法开启]]>
+    </entry>
+    
 </properties>

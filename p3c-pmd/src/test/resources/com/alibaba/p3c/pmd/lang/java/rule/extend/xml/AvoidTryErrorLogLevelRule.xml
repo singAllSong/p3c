@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<test-data xmlns="http://pmd.sourceforge.net/rule-tests"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://pmd.sourceforge.net/rule-tests https://pmd.sourceforge.io/rule-tests_1_0_0.xsd">
+    <code-fragment id="trystatement-have-error-log">
+        <![CDATA[
+	public class Example {
+	    public void fn() {
+            log.error("fn");
+            try{
+                log.error("try");
+                log.error("try");
+            }catch (Exception e){
+                log.info("catch", e.getMessage());
+            }
+	    }
+	}
+		]]>
+    </code-fragment>
+    <test-code>
+        <description>statement have error log</description>
+        <expected-problems>2</expected-problems>
+        <!-- <expected-linenumbers>2,2</expected-linenumbers> -->
+        <code-ref id="trystatement-have-error-log"/>
+    </test-code>
+    
+</test-data>

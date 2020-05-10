@@ -2,25 +2,24 @@
 <test-data xmlns="http://pmd.sourceforge.net/rule-tests"
            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
            xsi:schemaLocation="http://pmd.sourceforge.net/rule-tests https://pmd.sourceforge.io/rule-tests_1_0_0.xsd">
-    <code-fragment id="statement-have-error-log">
+    <code-fragment id="catchstatement-have-e-getmessage">
         <![CDATA[
 	public class Example {
 	    public void fn() {
-            log.error("fn");
-            try{
-                log.error("try");
-            }catch (Exception e){
-                log.info("catch", e.getMessage());
+            try {
+                dosomething();
+            } catch (Exception e) {
+                log.error("error", e.getMessage());
             }
 	    }
 	}
 		]]>
     </code-fragment>
     <test-code>
-        <description>statement have error log</description>
-        <expected-problems>7</expected-problems>
+        <description>catchstatement have e getmessage</description>
+        <expected-problems>1</expected-problems>
         <!-- <expected-linenumbers>2,2</expected-linenumbers> -->
-        <code-ref id="statement-have-error-log"/>
+        <code-ref id="catchstatement-have-e-getmessage"/>
     </test-code>
     
 </test-data>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<test-data xmlns="http://pmd.sourceforge.net/rule-tests"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://pmd.sourceforge.net/rule-tests https://pmd.sourceforge.io/rule-tests_1_0_0.xsd">
+    <code-fragment id="requestmapping-rule">
+        <![CDATA[
+    import lombok.extern.slf4j.Slf4j;
+    import org.springframework.beans.factory.annotation.Autowired;
+    import org.springframework.web.bind.annotation.RequestMapping;
+    import org.springframework.web.bind.annotation.RestController;
+    import java.util.List;
+        
+    @Slf4j
+    @RestController
+    @RequestMapping("/test")
+    public class KzxController {
+        @RequestMapping(value="/kzx1",method = {RequestMethod.GET,RequestMethod.POST})
+        public String sayHeHe() {
+            return "hehe";
+        }
+        
+        @RequestMapping("/kzx2")
+        public String sayHeiHei() {
+            return "heihei";
+        }
+        
+        @RequestMapping(value="/kzx3", method = {RequestMethod.GET})
+        public String sayHaHa() {
+            return "haha";
+        }
+        
+        
+    }
+        ]]>
+    </code-fragment>
+    <test-code>
+        <description>requestmapping rule</description>
+        <expected-problems>1</expected-problems>
+        <!-- <expected-linenumbers>2,2</expected-linenumbers> -->
+        <code-ref id="requestmapping-rule"/>
+    </test-code>
+    
+</test-data>
