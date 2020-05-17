@@ -249,5 +249,32 @@ Positive example：
          ]]>
         </example>
     </rule>
+    
+    <!-- 代码中禁止出现21,22,28网段 -->
+    <rule name="AvoidTestNetworkSegmentRule"
+        language="java"
+        message="java.extend.testNetworkSegment.rule.msg"
+        class="com.alibaba.p3c.pmd.lang.java.rule.extend.AvoidTestNetworkSegmentRule">
+        <description>java.extend.RequestMappingRule.rule.msg</description>
+        <priority>1</priority>
+        <example>
+        <![CDATA[
+Negative example:  
+    public void fn(){
+        String ip = "22.106.103.97";
+        invoke(ip);
+    }
+        ]]>
+        </example>
+        <example>
+        <![CDATA[
+Positive example： 
+    @Value("${ip}")
+    public void fn(){
+        invoke(ip);
+    }
+         ]]>
+        </example>
+    </rule>
 
 </ruleset>

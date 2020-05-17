@@ -618,6 +618,10 @@ public class Example {
         <![CDATA[开发中心扩展：涉及客户的敏感信息请勿用日志打出]]>
     </entry>
     
+    <!--  -->
+    <entry key="java.extend.testNetworkSegment.rule.msg">
+        <![CDATA[开发中心扩展：代码中禁止出现21,22,28打头的网段,建议写进配置中心并用根据不同的环境变量启用测试ip或生产ip]]>
+    </entry>
     
     
 </properties>

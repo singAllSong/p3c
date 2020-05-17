@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<test-data xmlns="http://pmd.sourceforge.net/rule-tests"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://pmd.sourceforge.net/rule-tests https://pmd.sourceforge.io/rule-tests_1_0_0.xsd">
+    <code-fragment id="ip-network-segment">
+        <![CDATA[
+	public class Example {
+	    public void fn() {
+            String ip = "22.106.103.97";
+            invoke("22.106.103.97");
+            invoke(ip);
+	    }
+	}
+		]]>
+    </code-fragment>
+    <test-code>
+        <description>ip network segment</description>
+        <expected-problems>2</expected-problems>
+        <!-- <expected-linenumbers>2,2</expected-linenumbers> -->
+        <code-ref id="ip-network-segment"/>
+    </test-code>
+    
+</test-data>
