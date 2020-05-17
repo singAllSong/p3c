@@ -223,5 +223,31 @@ Positive example：
          ]]>
         </example>
     </rule>
+    
+    <!-- 客户信息的敏感信息请勿用日志打出来 -->
+    <rule name="LogBlockRule"
+        language="java"
+        message="java.extend.logsensitive.rule.msg"
+        class="com.alibaba.p3c.pmd.lang.java.rule.extend.LogBlockRule">
+        <description>java.extend.RequestMappingRule.rule.msg</description>
+        <priority>3</priority>
+        <example>
+        <![CDATA[
+Negative example:  
+    public void fn(){
+        log.info("userName:{},age:{},certNo:{}", userName, age, certNo);
+    }
+        ]]>
+        </example>
+        <example>
+        <![CDATA[
+Positive example： 
+    public void fn(){
+        //建议使用日志脱敏框架Sensitive或其他  @Sensitive(strategy = StrategyCardId.class)  private String certNo;
+        log.info("userInfo:{}", JsonUtils.object2String(userInfo));
+    }
+         ]]>
+        </example>
+    </rule>
 
 </ruleset>

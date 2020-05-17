@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<test-data xmlns="http://pmd.sourceforge.net/rule-tests"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://pmd.sourceforge.net/rule-tests https://pmd.sourceforge.io/rule-tests_1_0_0.xsd">
+    <code-fragment id="log-sensitive-rule">
+        <![CDATA[
+    public class KzxLogRuleTest {
+        public String fn() {
+            log.info("userName:{},age:{},certNo:{}", userName, age, certNo);
+        }
+        
+    }
+        ]]>
+    </code-fragment>
+    <test-code>
+        <description>log sensitive rule</description>
+        <expected-problems>1</expected-problems>
+        <!-- <expected-linenumbers>2,2</expected-linenumbers> -->
+        <code-ref id="log-sensitive-rule"/>
+    </test-code>
+    
+</test-data>

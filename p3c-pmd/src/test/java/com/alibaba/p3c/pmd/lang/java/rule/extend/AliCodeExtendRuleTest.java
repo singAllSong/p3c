@@ -12,11 +12,12 @@ public class AliCodeExtendRuleTest extends SimpleAggregatorTst {
         //addRule(RULESET, "NoMapParamTypeRule");
         //addRule(RULESET, "AvoidTryErrorLogLevelRule");
         //addRule(RULESET, "AvoidCatchInfoLogLevelRule");
-        //addRule(RULESET, "AvoidCommonErrorLogLevelRule");
+        addRule(RULESET, "AvoidCommonErrorLogLevelRule");
         
         //addRule(RULESET, "AvoidSystemdoOutRule");
         //addRule(RULESET, "AvoidEdoGetMessageRule");
-        addRule(RULESET, "RequestMappingRule");
+        //addRule(RULESET, "RequestMappingRule");
+        //addRule(RULESET, "LogBlockRule");
         
         
         

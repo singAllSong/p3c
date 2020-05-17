@@ -12,6 +12,7 @@
                 log.error("try");
             }catch (Exception e){
                 log.info("catch", e.getMessage());
+                log.error("catch", e.getMessage());
             }
 	    }
 	}

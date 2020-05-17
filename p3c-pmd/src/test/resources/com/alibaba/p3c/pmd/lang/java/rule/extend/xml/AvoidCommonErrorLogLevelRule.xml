@@ -6,15 +6,21 @@
         <![CDATA[
 	public class Example {
 	    public void fn() {
-            log.error("error");
-            log.info("error");
+            log.error("fn error");
+            log.error("fn error");
+            try{
+                log.error("try");
+            }catch(Exception e){
+                log.error("catch error", e);
+                log.info("catch error", e);
+            }
 	    }
 	}
 		]]>
     </code-fragment>
     <test-code>
         <description>commonstatement have info log</description>
-        <expected-problems>1</expected-problems>
+        <expected-problems>2</expected-problems>
         <!-- <expected-linenumbers>2,2</expected-linenumbers> -->
         <code-ref id="commonstatement-have-info-log"/>
     </test-code>

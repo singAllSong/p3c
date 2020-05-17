@@ -12,6 +12,7 @@
                 log.info("try");
             }catch (Exception e){
                 log.info("catch", e.getMessage());
+                log.info("catch", e.getMessage());
                 log.error("catch", e.getMessage());
             }
 	    }
@@ -20,7 +21,7 @@
     </code-fragment>
     <test-code>
         <description>catchstatement have info log</description>
-        <expected-problems>1</expected-problems>
+        <expected-problems>2</expected-problems>
         <!-- <expected-linenumbers>2,2</expected-linenumbers> -->
         <code-ref id="catchstatement-have-info-log"/>
     </test-code>

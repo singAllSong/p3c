@@ -613,4 +613,11 @@ public class Example {
         <![CDATA[开发中心扩展：使用@RequestMapping注解时,需指定method参数,避免无用的方法开启]]>
     </entry>
     
+    <!-- 客户的敏感信息 -->
+    <entry key="java.extend.logsensitive.rule.msg">
+        <![CDATA[开发中心扩展：涉及客户的敏感信息请勿用日志打出]]>
+    </entry>
+    
+    
+    
 </properties>
